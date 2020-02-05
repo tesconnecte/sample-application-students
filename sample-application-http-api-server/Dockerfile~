@@ -1,0 +1,12 @@
+FROM  maven:3.6.3-jdk-11 AS myapp-build
+ENV MY_APP_HOME /opt/myapp
+WORKDIR $MY_APP_HOME
+COPY  pom.xml .
+COPY  ./src ./src
+RUN  mvn package -DskipTests
+
+FROM  openjdk:11-jre
+ENV  MY_APP_HOME /opt/myapp
+WORKDIR $MY_APP_HOME
+COPY --from=myapp-build $MY_APP_HOME/target/*.jar $MY_APP_HOME/myapp.jar
+ENTRYPOINT java -jar myapp.jar
