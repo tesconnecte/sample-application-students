@@ -35,10 +35,6 @@
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
         <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
         <sonar.exclusions>**/*Configuration.*, **/*Application*.*</sonar.exclusions>
-        <sonar.projectKey>tesconnecte_sample-application-students</sonar.projectKey>
-        <sonar.organization>cpecanevaal</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.login>74a6f970617d135fe73515fe38b593411dc218b8</sonar.login>
     </properties>
 
     <dependencyManagement>
