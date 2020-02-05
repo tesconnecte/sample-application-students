@@ -4,6 +4,10 @@ services:
  - java
 
 script: 
- - docker build -t alexis.canevali/sample-application-db-changelog-job ./sample-application-db-changelog-job/
- - docker build -t alexis.canevali/sample-application-http-api-server ./sample-application-http-api-server/
- - docker 
+ - docker build -t cpecanevaal/sample-application-db-changelog-job ./sample-application-db-changelog-job/
+ - docker build -t cpecanevaal/sample-application-http-api-server ./sample-application-http-api-server/
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+ - docker push cpecanevaal/sample-application-db-changelog-job
+ - docker push cpecanevaal/sample-application-http-api-server
+
+ 

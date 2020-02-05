@@ -1,1 +1,9 @@
 language: java
+
+services: 
+ - java
+
+script: 
+ - docker build -t alexis.canevali/sample-application-db-changelog-job ./sample-application-db-changelog-job/
+ - docker build -t alexis.canevali/sample-application-http-api-server ./sample-application-http-api-server/
+ - docker 
