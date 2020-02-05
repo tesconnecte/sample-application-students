@@ -3,11 +3,23 @@ language: java
 services: 
  - java
 
+cache:
+ directories:
+  - "$HOME/.m2/repository"
+
+addons:
+  sonarcloud:
+    organization: "cpecanevaal"
+    token:
+      secure: "4a551f1b47ab6726cba79fc1ad843ae44dc44736"
+
 script: 
  - docker build -t cpecanevaal/sample-application-db-changelog-job ./sample-application-db-changelog-job/
  - docker build -t cpecanevaal/sample-application-http-api-server ./sample-application-http-api-server/
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
  - docker push cpecanevaal/sample-application-db-changelog-job
  - docker push cpecanevaal/sample-application-http-api-server
- - mvn verify sonar:sonar
+ - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=tesconnecte_sample-application-students
+
+
  

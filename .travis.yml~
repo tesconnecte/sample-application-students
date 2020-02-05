@@ -3,11 +3,15 @@ language: java
 services: 
  - java
 
+cache:
+ directories:
+  - "$HOME/.m2/repository"
+
 script: 
  - docker build -t cpecanevaal/sample-application-db-changelog-job ./sample-application-db-changelog-job/
  - docker build -t cpecanevaal/sample-application-http-api-server ./sample-application-http-api-server/
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
  - docker push cpecanevaal/sample-application-db-changelog-job
  - docker push cpecanevaal/sample-application-http-api-server
-
+ - mvn verify sonar:sonar
  
