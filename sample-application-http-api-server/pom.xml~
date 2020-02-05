@@ -9,6 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <sonar.projectKey>tesconnecte_sample-application-students</sonar.projectKey>
+        <sonar.organization>cpecanevaal</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>ff5c23eef8e07d677be522c3e02b95283345ee35</sonar.login>
+    </properties>
+
     <artifactId>sample-application-http-api-server</artifactId>
 
     <dependencies>
