@@ -38,7 +38,7 @@
         <sonar.projectKey>tesconnecte_sample-application-students</sonar.projectKey>
         <sonar.organization>cpecanevaal</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.login>74a6f970617d135fe73515fe38b593411dc218b8</sonar.login>
+        <sonar.login>f1dd01f404387a3704a768ff89c622a7ec42d57c</sonar.login>
     </properties>
 
     <dependencyManagement>
